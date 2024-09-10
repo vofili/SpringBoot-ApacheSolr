@@ -1,0 +1,41 @@
+Bug Fixing
+
+
+Make sure the bug fix is for compilation  errors
+Try to see if the fixes can contain 100% test coverage
+Do not to use simple errors like type mismatch or bugs that require only a single line change
+Prompts should include some level of complexity but not advanced
+
+
+Solution Reasoning
+Ensure the code efficiency is explained
+
+
+Be creative
+
+
+RAG
+
+
+Strong programming skills in Java with proficiency in object-oriented design principles
+Experience with Java frameworks such as DropWizard, Spring and Hibernate
+Familiarity with web development frameworks (Angular or React)
+Familiarity with distributed storage systems like DB2, ORacle, Cassandra, MongoDB
+Familiarity with continuous integration and continuous deployment (CI/CD) pipelines especially using Git
+Working knowledge of Unix/Linux experience
+
+
+
+
+
+We've carefully reviewed your application, and are truly impressed with your skills and experience. In fact, we'd love to work with you in the future.
+
+However, unfortunately at this time, we're unable to progress your application.
+
+But this isn't a rejection email.
+
+
+I have 5 years as a Full-stack Java developer. 
+The projects required a service which delivered realtime updates of customer data from an insurance policy administration system to an insurance regulator via system to system integrations and Kafka streams.
+I implemented this system by developing a microservice with the spring framework which received streaming data via Kafka from an insurance service that a connector which streamed data updates via CDC (change data capture) from the policy administration's enterprise database(AWS RDS MSSQL) to a Debezium connector(Kafka Connect). 
+I also incorporated a service which parsed, reformatted and classified the received data according to the specification provided by the regulator. I provided the cleaned data to the collection of API's designed to receive the data.

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Uploader</title>
+</head>
+<body>
+
+<h2>Photo Uploader</h2>
+
+
+
+<input id="photoupload" class="photoupload" type="file"/>
+    <button id="upload-button" onClick="uploadPhoto()">Upload Photo</button>
+
+<script type="text/javascript">
+   async function uploadPhoto(){
+
+       let formData = new FormData();
+       formData.append("data", photoupload.files[0]);
+
+       await fetch("http://localhost:8080/photos/upload", {method:"POST",body:formData})
+           .then(result => result.text())
+           .then(text => alert(text));
+
+   }
+</script>
+
+</body>
+</html>
