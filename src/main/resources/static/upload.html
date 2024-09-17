@@ -19,7 +19,7 @@
        let formData = new FormData();
        formData.append("data", photoupload.files[0]);
 
-       await fetch("http://localhost:8080/photos/upload", {method:"POST",body:formData})
+       await fetch("http://localhost:8181/photos/upload", {method:"POST",body:formData})
            .then(result => result.text())
            .then(text => alert(text));
 

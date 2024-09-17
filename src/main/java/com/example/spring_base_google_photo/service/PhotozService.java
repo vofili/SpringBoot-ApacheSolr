@@ -34,7 +34,7 @@ public class PhotozService {
 
     public Photoz save(String fileName,String contentType,byte[] data) {
         Photoz newPhoto = new Photoz();
-        newPhoto.setFilename(fileName);
+        newPhoto.setFileName(fileName);
         newPhoto.setRawData(data);
         newPhoto.setContentType(
                 contentType

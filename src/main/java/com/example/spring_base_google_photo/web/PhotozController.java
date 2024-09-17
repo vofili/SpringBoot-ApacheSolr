@@ -61,7 +61,7 @@ public class PhotozController {
     @PostMapping("/photos")
     public Photoz createPhoto(@RequestBody @Valid Photoz photo){
         //photo.setId(UUID.randomUUID().toString());
-        photoService.save(photo.getFilename(),photo.getContentType(),photo.getRawData());
+        photoService.save(photo.getFileName(),photo.getContentType(),photo.getRawData());
         return photo;
     }
 

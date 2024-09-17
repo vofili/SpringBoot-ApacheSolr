@@ -25,7 +25,7 @@ public class DownloadController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.valueOf(photo.getContentType()));
         headers.setContentDisposition(ContentDisposition.builder("attachment")
-                        .filename(photo.getFilename())
+                        .filename(photo.getFileName())
                 .build());
 
         return new ResponseEntity(data,headers, HttpStatus.OK);
