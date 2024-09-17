@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
-
 import java.io.IOException;
 import java.util.*;
 
@@ -18,7 +17,6 @@ public class PhotozController {
     private final PhotozService photoService;
 
     public PhotozController(PhotozService photoService){
-
         this.photoService = photoService;
     }
 
@@ -46,10 +44,7 @@ public class PhotozController {
 
     @DeleteMapping("/photos/{id}")
     public Photoz deletePhoto(@PathVariable Integer id){
-        Photoz photo = photoService.get(
-                id
-        );
-
+        Photoz photo = photoService.get(id);
         if(photo == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }else{
@@ -68,8 +63,7 @@ public class PhotozController {
 
     @PostMapping("/photos/upload")
     public Photoz createPhotoFromFile(@RequestPart("data") MultipartFile file) throws IOException {
-       Photoz photo = new Photoz();
-
+        Photoz photo = new Photoz();
         photo = photoService.save(file.getOriginalFilename(), file.getContentType(),file.getBytes());
         return photo;
     }
