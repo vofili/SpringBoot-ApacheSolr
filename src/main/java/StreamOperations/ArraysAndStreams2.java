@@ -34,6 +34,42 @@ public class ArraysAndStreams2 {
     static Predicate<Employee> above20below30 = emp -> {
         return emp.salary() >= 20000.00  && emp.salary()  <= 30000.00;
     };
+
+
+
+    public static void doEmployeeSort(){
+
+
+        Employee e1 = new Employee(1, "Adama", "Traore", 25000.00, "Finance");
+        Employee e2 = new Employee(2, "Fabian", "Barthez", 100.00, "Hr");
+        Employee e3 = new Employee(3, "Yaya", "Toure", 21000.00, "Services");
+        Employee e4 = new Employee(4, "David", "CumberBatch", 20000.00, "Finance");
+        Employee e5 = new Employee(5, "Jim", "Ratclife", 5000.00, "Executive");
+
+        Employee[] emps = {e1, e2, e3, e4, e5};
+
+      // Collection<Employee> mySortedList = Arrays.stream(employees).sorted(Comparator.comparing(Employee::salary)).toList();
+
+        Function<Employee,String> byLastName = Employee::lastName;
+        Comparator<Employee> sortByLastName = Comparator.comparing(byLastName);
+        Arrays.stream(emps).sorted(sortByLastName).forEach(System.out::println);
+      // System.out.println(Arrays.toString(mySortedList.toArray()));
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     static void doEmployeesProcessing() {
 
         Employee e1 = new Employee(1, "Adama", "Traore", 25000.00, "Finance");
@@ -147,8 +183,61 @@ public class ArraysAndStreams2 {
     static UnaryOperator<Double> sqrtFnSq = x ->{
         return Math.sqrt(x);
     };
+
+
     public static void main(String[] args) {
         //doStringStreamOperations();
-        doEmployeesProcessing();
+       // doEmployeesProcessing();
+        doEmployeeSort();
+    }
+}
+
+class Student{
+    String firstName;
+    String lastName;
+    String email;
+
+    Long id;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
